@@ -62,8 +62,9 @@ public class ExpressionParser implements Parser {
 		String s = " on index " + errorIndex + " \t|---> ";
 		if (str.length() > 20) {
 			int a = errorIndex - 10;
-			if (a < 0) {
+			if (a <= 0) {
 				a = 0;
+				s += "...";
 			}
 			s += str.substring(a, errorIndex - 1) + "`" + str.substring(errorIndex - 1, a + 20) + "...";
 		} else {
